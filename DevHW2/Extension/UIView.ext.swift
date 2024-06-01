@@ -1,8 +1,10 @@
-//
-//  UIView.ext.swift
-//  DevHW2
-//
-//  Created by Павел Градов on 01.06.2024.
-//
-
 import Foundation
+import UIKit
+
+extension UIView {
+    static func config<T: UIView>(view: T, completion: @escaping (T) -> Void) -> T {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        completion(view)
+        return view
+    }
+}
